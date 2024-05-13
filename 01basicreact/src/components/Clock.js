@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 // import ReactDom from 'react-dom';
 // // const element = React.createElement('h1',null,'hello, world!');
     // setInterval(() => {
@@ -116,16 +117,148 @@ import React from 'react';
 // // eivabe children pass korte hoy, attribute charao children pass kora jay
 // // {this.props.children} diye children pass kora jay
 
+            // //state and lifecycle start
 
+            // class Clock extends React.Component { 
+            //     constructor(props){
+            //         super(props);
+            //         this.state = {date: new Date()};            
+            //     }
+            //     // state = {date: new Date()}; // { bracketsoho uporer 4 line ei ekta line niye likha jay, shortcut
+
+
+            //     componentDidMount() {
+            //         this.clockTimer = setInterval(() =>
+            //            this.tick(), 1000); 
+            //     }
+
+            //     componentWillUnmount(){
+            //         clearInterval(this.clockTimer);
+            //     }
+
+            //     tick(){
+            //         this.setState({
+            //             date: new Date(),
+            //         });
+            //     }
+
+            //     render(){    
+            //         return(
+            //             <h1 className= "heading">
+            //             <span className="text">Hello Time {this.state.date.toLocaleTimeString(this.props.locale)}</span>
+            //             {" "}
+            //             <span className="text">Hello Date {new Date().toLocaleDateString(this.props.locale)}</span>
+            //             </h1>
+            //         )
+            //     }    
+            // }
+
+            // //state and lifecycle end
+
+            // // Event Handling & Control Re Rendering start
+            // class Clock extends React.Component { 
+            //     constructor(props){
+            //         super(props);
+            //         this.state = {date: new Date()};            
+            //     }
+            //     // state = {date: new Date()}; // { bracketsoho uporer 4 line ei ekta line niye likha jay, shortcut
+
+
+            //     componentDidMount() {
+            //         this.clockTimer = setInterval(() =>
+            //            this.tick(), 1000); 
+            //     }
+
+            //     componentWillUnmount(){
+            //         clearInterval(this.clockTimer);
+            //     }
+
+            //     handleClick() {
+            //         console.log("The button was clicked");
+            //     }
+
+            //     tick(){
+            //         this.setState({
+            //             date: new Date(),
+            //         });
+            //     }
+
+            //     render(){    
+            //         const {date} = this.state; 
+            //         return(
+            //             <div>
+            //                 <h1 className= "heading">
+            //                     <span className="text">Hello Time {date.toLocaleTimeString('bn-BD')}</span>
+            //                 </h1>
+            //                 <button onClick={this.handleClick}>
+            //                     Click Here
+            //                 </button>
+            //             </div>
+            //         );
+            //     }    
+            // }
+            // // html er sathe nicher duita parthokko->
+            // // onClick er vitore this.handleClick() hobe na karon tahole khali function call kortei thakbe
+            // // strting dea jabe na, dynamically dite hobe 
+
+
+            // class Clock extends React.Component { 
+            //     constructor(props){
+            //         super(props);
+            //         this.state = {date: new Date(), locale: 'bn-BD'};            
+            //     }
+            //     // state = {date: new Date()}; // { bracketsoho uporer 4 line ei ekta line niye likha jay, shortcut
+            //     // locale ta ebar ekhane niye ashlam, click kore value change korar jonne
+
+            //     componentDidMount() {
+            //         this.clockTimer = setInterval(() =>
+            //            this.tick(), 1000); 
+            //     }
+
+            //     componentWillUnmount(){
+            //         clearInterval(this.clockTimer);
+            //     }
+
+            //     handleClick = () =>{
+            //         this.setState({
+            //             locale: 'en-US'
+            //         }
+            //     );
+            //     }
+            //     // eta class method er moto thakle this ta ekhane callback function call kore, jar karone this a value pay na
+            //     // etar karone etake array function banay dea besh practice, amra oivabei krbo, aro kichu way ache though  
+
+            //     tick(){
+            //         this.setState({
+            //             date: new Date(),
+            //         });
+            //     }
+
+            //     render(){    
+            //         const {date, locale} = this.state; 
+            //         return(
+            //             <div>
+            //                 <h1 className= "heading">
+            //                     <span className="text">Hello Time {date.toLocaleTimeString(locale)}</span>
+            //                 </h1>
+            //                 <button onClick={this.handleClick}>
+            //                     Click Here
+            //                 </button>
+            //             </div>
+            //         );
+            //     }    
+            // }
+
+
+            // eki button kivabe arek jaygay kaj kore seta ekhane dekhabo
+            // re rendering
 
             class Clock extends React.Component { 
                 constructor(props){
                     super(props);
-                    this.state = {date: new Date()};            
+                    this.state = {date: new Date(), locale: 'bn-BD'};            
                 }
-                // state = {date: new Date()}; // { bracketsoho uporer 4 line ei ekta line niye likha jay, shortcut
-
-
+             
                 componentDidMount() {
                     this.clockTimer = setInterval(() =>
                        this.tick(), 1000); 
@@ -135,6 +268,15 @@ import React from 'react';
                     clearInterval(this.clockTimer);
                 }
 
+                handleClick = () =>{
+                    this.setState({
+                        locale: 'en-US'
+                    }
+                );
+                }
+                // eta class method er moto thakle this ta ekhane callback function call kore, jar karone this a value pay na
+                // etar karone etake array function banay dea besh practice, amra oivabei krbo, aro kichu way ache though  
+
                 tick(){
                     this.setState({
                         date: new Date(),
@@ -142,15 +284,22 @@ import React from 'react';
                 }
 
                 render(){    
+                    console.log("clock component rendered");
+                    const {date, locale} = this.state; 
                     return(
-                        <h1 className= "heading">
-                        <span className="text">Hello Time {this.state.date.toLocaleTimeString(this.props.locale)}</span>
-                        {" "}
-                        <span className="text">Hello Date {new Date().toLocaleDateString(this.props.locale)}</span>
-                        </h1>
-                    )
+                        <div>
+                            <h1 className= "heading">
+                                <span className="text">Hello Time {date.toLocaleTimeString(locale)}</span>
+                            </h1>
+                            <Button change={this.handleClick} locale="en-US">
+                                Click Here
+                            </Button>
+                        </div>
+                    );
                 }    
             }
+            // ekahne et bind kore pathano lagbe
 
+            // // Event Handling & Control Re Rendering end
 
 export default Clock;
