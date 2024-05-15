@@ -372,6 +372,110 @@ import Button from './Button';
 
             // if else er kaj ta return() er moddheo kora jay sonkhepe, niche setar way ache
 
+            // class Clock extends React.Component { 
+            //     constructor(props){
+            //         super(props);
+            //         this.state = {date: new Date(), locale: 'bn-BD'};            
+            //     }
+             
+            //     componentDidMount() {
+            //         this.clockTimer = setInterval(() =>
+            //            this.tick(), 1000); 
+            //     }
+
+            //     componentWillUnmount(){
+            //         clearInterval(this.clockTimer);
+            //     }
+
+            //     handleClick = (locale) =>{
+            //         this.setState({
+            //             locale,
+            //         }
+            //     );
+            //     }
+            //     // eta class method er moto thakle this ta ekhane callback function call kore, jar karone this a value pay na
+            //     // etar karone etake array function banay dea besh practice, amra oivabei krbo, aro kichu way ache though  
+            //     // click here ke banglay klik korun niye asha jabe klik korle 
+            //     // arekta p rakhlam hello naam a , ekbar show korbe, toggle a hidden korbe, etao ekhane
+
+            //     tick(){
+            //         this.setState({
+            //             date: new Date(),
+            //         });
+            //     }
+
+            //     render(){    
+            //         const {date, locale} = this.state;
+
+            //         return(
+            //             <div>
+            //                 <h1 className= "heading">
+            //                     <span className="text">{date.toLocaleTimeString(locale)}</span>
+            //                 </h1>
+            //                 {locale === "bn-BD" ?
+            //                 <Button change={this.handleClick} locale="en-US" show={false}/> :
+            //                 <Button change={this.handleClick} locale="bn-BD" show={true}/>
+            //                 }
+                            
+            //             </div>
+            //         );
+            //     }    
+            // }
+
+
+
+            // button ta ebar disable kore dibo
+            // class Clock extends React.Component { 
+            //     constructor(props){
+            //         super(props);
+            //         this.state = {date: new Date(), locale: 'bn-BD'};            
+            //     }
+             
+            //     componentDidMount() {
+            //         this.clockTimer = setInterval(() =>
+            //            this.tick(), 1000); 
+            //     }
+
+            //     componentWillUnmount(){
+            //         clearInterval(this.clockTimer);
+            //     }
+
+            //     handleClick = (locale) =>{
+            //         this.setState({
+            //             locale,
+            //         }
+            //     );
+            //     }
+             
+            //     tick(){
+            //         this.setState({
+            //             date: new Date(),
+            //         });
+            //     }
+
+            //     render(){    
+            //         const {date, locale} = this.state;
+
+            //         return(
+            //             <div>
+            //                 <h1 className= "heading">
+            //                     <span className="text">{date.toLocaleTimeString(locale)}</span>
+            //                 </h1>
+            //                 {locale === "bn-BD" ?
+            //                 <Button change={this.handleClick} locale="en-US" show={false} enable={false}/> :
+            //                 <Button change={this.handleClick} locale="bn-BD" show={true} enable />
+            //                 }
+                            
+            //             </div>
+            //         );
+            //     }    
+            // }
+            // // enable true likhte hoy na, etake button js a pathate hobe, rcv kore condition check
+
+
+            // eibar ek ghori barbar barbar print korbo, list create korbo, pore ogulay key add korbo
+            // etar jonne clockist.js khulsi, echara app.js a o code korsi
+
             class Clock extends React.Component { 
                 constructor(props){
                     super(props);
@@ -381,7 +485,7 @@ import Button from './Button';
                 componentDidMount() {
                     this.clockTimer = setInterval(() =>
                        this.tick(), 1000); 
-                }
+                } 
 
                 componentWillUnmount(){
                     clearInterval(this.clockTimer);
@@ -393,11 +497,7 @@ import Button from './Button';
                     }
                 );
                 }
-                // eta class method er moto thakle this ta ekhane callback function call kore, jar karone this a value pay na
-                // etar karone etake array function banay dea besh practice, amra oivabei krbo, aro kichu way ache though  
-                // click here ke banglay klik korun niye asha jabe klik korle 
-                // arekta p rakhlam hello naam a , ekbar show korbe, toggle a hidden korbe, etao ekhane
-
+             
                 tick(){
                     this.setState({
                         date: new Date(),
@@ -413,15 +513,14 @@ import Button from './Button';
                                 <span className="text">{date.toLocaleTimeString(locale)}</span>
                             </h1>
                             {locale === "bn-BD" ?
-                            <Button change={this.handleClick} locale="en-US" show={false}/> :
-                            <Button change={this.handleClick} locale="bn-BD" show={true}/>
+                            <Button change={this.handleClick} locale="en-US" show={false} enable={false}/> :
+                            <Button change={this.handleClick} locale="bn-BD" show={true} enable />
                             }
                             
                         </div>
                     );
                 }    
             }
-
 
 
             // Conditional Rendering, List and Keys end

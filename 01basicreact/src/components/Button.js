@@ -15,7 +15,10 @@ class Button extends React.Component{
     }
 
     render(){
-        const {change, locale, show} = this.props;
+        const {change, locale, show, enable} = this.props;
+        if (!enable) return null; //ekhane kichu na kichu return kortei hobe, amra null return korbo 
+            
+        
         return(
             <>
                 <button onClick={()=>change(locale)} >
