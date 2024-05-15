@@ -2,6 +2,7 @@ import React from "react";
 
 class Button extends React.Component{
 
+                // // Event Handling & Control Re Rendering start
     shouldComponentUpdate(nextProps){
         const {change: currentChange, locale: currentLocale} = this.props;
         const {change: nextChange, locale: nextLocale} = nextProps;
@@ -14,12 +15,15 @@ class Button extends React.Component{
     }
 
     render(){
-        console.log("button component rendered");
-        const {change, locale} = this.props;
+        const {change, locale, show} = this.props;
         return(
-            <button onClick={()=>change(locale)} >
-                Click Here
-            </button>
+            <>
+                <button onClick={()=>change(locale)} >
+                    {locale === "bn-BD" ? 'Change Clock' : 'ঘড়ি পরিবর্তন করুন'}
+                </button>
+                { show && <p>Hello</p>}
+                {/* js er e ekta par ekhane show true hole dekhabe, false hole bakitao false, dekhabe na */}
+            </>
         )      
     }
 }

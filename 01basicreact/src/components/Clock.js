@@ -250,8 +250,127 @@ import Button from './Button';
             // }
 
 
-            // eki button kivabe arek jaygay kaj kore seta ekhane dekhabo
-            // re rendering
+            // // eki button kivabe arek jaygay kaj kore seta ekhane dekhabo
+            // // re rendering
+
+            // class Clock extends React.Component { 
+            //     constructor(props){
+            //         super(props);
+            //         this.state = {date: new Date(), locale: 'bn-BD'};            
+            //     }
+             
+            //     componentDidMount() {
+            //         this.clockTimer = setInterval(() =>
+            //            this.tick(), 1000); 
+            //     }
+
+            //     componentWillUnmount(){
+            //         clearInterval(this.clockTimer);
+            //     }
+
+            //     handleClick = () =>{
+            //         this.setState({
+            //             locale: 'en-US'
+            //         }
+            //     );
+            //     }
+            //     // eta class method er moto thakle this ta ekhane callback function call kore, jar karone this a value pay na
+            //     // etar karone etake array function banay dea besh practice, amra oivabei krbo, aro kichu way ache though  
+
+            //     tick(){
+            //         this.setState({
+            //             date: new Date(),
+            //         });
+            //     }
+
+            //     render(){    
+            //         console.log("clock component rendered");
+            //         const {date, locale} = this.state; 
+            //         return(
+            //             <div>
+            //                 <h1 className= "heading">
+            //                     <span className="text">Hello Time {date.toLocaleTimeString(locale)}</span>
+            //                 </h1>
+            //                 <Button change={this.handleClick} locale="en-US">
+            //                     Click Here
+            //                 </Button>
+            //             </div>
+            //         );
+            //     }    
+            // }
+            // // ekahne et bind kore pathano lagbe
+
+            // // Event Handling & Control Re Rendering end
+
+
+            //
+
+
+
+            // Conditional Rendering, List and Keys start
+            // uporer button ta ke toggle korsi, jeno bn dile en ashe, en dile bn ashe
+
+            // class Clock extends React.Component { 
+            //     constructor(props){
+            //         super(props);
+            //         this.state = {date: new Date(), locale: 'bn-BD'};            
+            //     }
+             
+            //     componentDidMount() {
+            //         this.clockTimer = setInterval(() =>
+            //            this.tick(), 1000); 
+            //     }
+
+            //     componentWillUnmount(){
+            //         clearInterval(this.clockTimer);
+            //     }
+
+            //     handleClick = (locale) =>{
+            //         this.setState({
+            //             locale,
+            //         }
+            //     );
+            //     }
+            //     // eta class method er moto thakle this ta ekhane callback function call kore, jar karone this a value pay na
+            //     // etar karone etake array function banay dea besh practice, amra oivabei krbo, aro kichu way ache though  
+
+            //     tick(){
+            //         this.setState({
+            //             date: new Date(),
+            //         });
+            //     }
+
+            //     render(){    
+            //         const {date, locale} = this.state;
+            //         let button;
+            //         if (locale === "bn-BD"){
+            //             button = (
+            //                 <Button change={this.handleClick} locale="en-US">
+            //                 Click Here 
+            //                 </Button> 
+            //             );
+            //     }
+            //         else{
+            //                 button = (
+            //                 <Button change={this.handleClick} locale="bn-BD">
+            //                     Click Here
+            //                 </Button>
+            //                 );     
+            //         }
+
+            //         return(
+            //             <div>
+            //                 <h1 className= "heading">
+            //                     <span className="text">Hello Time {date.toLocaleTimeString(locale)}</span>
+            //                 </h1>
+            //                 {button}
+            //             </div>
+            //         );
+            //     }    
+            // }
+
+
+            // if else er kaj ta return() er moddheo kora jay sonkhepe, niche setar way ache
 
             class Clock extends React.Component { 
                 constructor(props){
@@ -268,14 +387,16 @@ import Button from './Button';
                     clearInterval(this.clockTimer);
                 }
 
-                handleClick = () =>{
+                handleClick = (locale) =>{
                     this.setState({
-                        locale: 'en-US'
+                        locale,
                     }
                 );
                 }
                 // eta class method er moto thakle this ta ekhane callback function call kore, jar karone this a value pay na
                 // etar karone etake array function banay dea besh practice, amra oivabei krbo, aro kichu way ache though  
+                // click here ke banglay klik korun niye asha jabe klik korle 
+                // arekta p rakhlam hello naam a , ekbar show korbe, toggle a hidden korbe, etao ekhane
 
                 tick(){
                     this.setState({
@@ -284,22 +405,24 @@ import Button from './Button';
                 }
 
                 render(){    
-                    console.log("clock component rendered");
-                    const {date, locale} = this.state; 
+                    const {date, locale} = this.state;
+
                     return(
                         <div>
                             <h1 className= "heading">
-                                <span className="text">Hello Time {date.toLocaleTimeString(locale)}</span>
+                                <span className="text">{date.toLocaleTimeString(locale)}</span>
                             </h1>
-                            <Button change={this.handleClick} locale="en-US">
-                                Click Here
-                            </Button>
+                            {locale === "bn-BD" ?
+                            <Button change={this.handleClick} locale="en-US" show={false}/> :
+                            <Button change={this.handleClick} locale="bn-BD" show={true}/>
+                            }
+                            
                         </div>
                     );
                 }    
             }
-            // ekahne et bind kore pathano lagbe
 
-            // // Event Handling & Control Re Rendering end
 
+
+            // Conditional Rendering, List and Keys end
 export default Clock;
