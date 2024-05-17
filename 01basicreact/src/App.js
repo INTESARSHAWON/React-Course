@@ -1,5 +1,6 @@
 // import Clock from "./components/Clock";
-import ClockList from "./components/ClockList";
+// import ClockList from "./components/ClockList";
+import Form from "./components/Form";
 
 function App() {
       // //state and lifecycle start
@@ -17,16 +18,24 @@ function App() {
     // </div>
     // Event Handling & Control Re Rendering end
 
-    // Conditional Rendering, List and Keys start
+    // // Conditional Rendering, List and Keys start
 
-    const quantities=[1,2,3];
+    // const quantities=[1,2,3];
+    // return (
+    // <div>
+    //     <ClockList quantities ={quantities} />     
+    // </div>
+    // );
+    // // Conditional Rendering, List and Keys end
+
+    // Form Handling - Controlled vs Uncontrolled Component start
     return (
-    <div>
-        <ClockList quantities ={quantities} />     
-    </div>
-    // Conditional Rendering, List and Keys end
-    
-  );
+      <div>
+          <Form />     
+      </div>
+      // Conditional Rendering, List and Keys end
+      );
+    // Form Handling - Controlled vs Uncontrolled Component end
 }
 
 export default App;
