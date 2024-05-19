@@ -2,9 +2,11 @@
 // import ClockList from "./components/ClockList";
 // import Form from "./components/Form";
 // import Calculator from "./components/Calculator";
-import Emoji from './components/composition/Emoji';
-import Text from './components/composition/Text';
-import Bracket from './components/composition/Bracket';
+// import Emoji from './components/composition/Emoji';
+// import Text from './components/composition/Text';
+// import Bracket from './components/composition/Bracket';
+import ClickCounter from './components/ClickCounter';
+import HoverCounter from './components/HoverCounter';
 
 function App() {
       // //state and lifecycle start
@@ -49,26 +51,37 @@ function App() {
     // Lifting State Up end
 
     // Composition vs Inheritance start
-    return (
-          // <Text></Text> 
-          //ekhane <Text> use korle sudhu text print hobe, ejonnoi composition use kora, keno sb alada alada use kora jay
+//     return (
+//             //1st part
+//           // <Text></Text> 
+//           //ekhane <Text> use korle sudhu text print hobe, ejonnoi composition use kora, keno sb alada alada use kora jay
 
-          // <Emoji>
-          //       {({addEmoji})=> <Text addEmoji={addEmoji}/>}
-          // </Emoji>
-          // Emoji'r moddhe text wrap korsi ekhane, niche bracket tao etar moddhe wrap kore dibo
+//           // 2nd part
+//           // <Emoji>
+//           //       {({addEmoji})=> <Text addEmoji={addEmoji}/>}
+//           // </Emoji>
+//           // Emoji'r moddhe text wrap korsi ekhane, niche bracket tao etar moddhe wrap kore dibo
+            
+//           // 3rd part
+//       //    <Emoji>
+//       //           {({addEmoji})=> (
+//       //             <Bracket>
+//       //                 {({addBracket})=> <Text addEmoji={addEmoji} addBracket={addBracket}/>}
+//       //             </Bracket>
+//       //             )}
+//       //     </Emoji>
 
-          <Emoji>
-                {({addEmoji})=> (
-                  <Bracket>
-                      {({addBracket})=> <Text addEmoji={addEmoji} addBracket={addBracket}/>}
-                  </Bracket>
-                  )}
-          </Emoji>
-
-      );
+//       );
       // Composition vs Inheritance end
 
+      //Higher Order Components (HOC) start
+      return (
+      <div className='App'>
+          <ClickCounter/>
+          <HoverCounter/>
+      </div>
+      );
+      // Higher Order Components (HOC)end
 }
 
 export default App;
