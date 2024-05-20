@@ -5,8 +5,11 @@
 // import Emoji from './components/composition/Emoji';
 // import Text from './components/composition/Text';
 // import Bracket from './components/composition/Bracket';
-import ClickCounter from './components/ClickCounter';
-import HoverCounter from './components/HoverCounter';
+// import ClickCounter from './components/ClickCounter';
+// import HoverCounter from './components/HoverCounter';
+import ClickCounterRender from './components/ClickCounterRender';
+import HoverCounterRender from './components/HoverCounterRender';
+import Counter from './components/Counter';
 
 function App() {
       // //state and lifecycle start
@@ -74,14 +77,26 @@ function App() {
 //       );
       // Composition vs Inheritance end
 
-      //Higher Order Components (HOC) start
-      return (
-      <div className='App'>
-          <ClickCounter/>
-          <HoverCounter/>
-      </div>
-      );
-      // Higher Order Components (HOC)end
+    //   //Higher Order Components (HOC) start
+    //   return (
+    //   <div className='App'>
+    //       <ClickCounter/>
+    //       <HoverCounter/>
+    //   </div>
+    //   );
+    //   // Higher Order Components (HOC) end
+
+    //Render Props start
+    return (
+        <div className='App'>
+            <Counter render= {(count,incrementCount)=>
+                <ClickCounterRender count={count} incrementCount={incrementCount}/>}/>
+
+            <Counter render= {(count,incrementCount)=>
+                <HoverCounterRender count={count} incrementCount={incrementCount}/>}/>    
+        </div>
+        );
+    // Render Props end
 }
 
 export default App;
