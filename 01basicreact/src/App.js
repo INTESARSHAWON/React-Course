@@ -7,12 +7,17 @@
 // import Bracket from './components/composition/Bracket';
 // import ClickCounter from './components/ClickCounter';
 // import HoverCounter from './components/HoverCounter';
-import ClickCounterRender from './components/ClickCounterRender';
-import HoverCounterRender from './components/HoverCounterRender';
-import Counter from './components/Counter';
+// import ClickCounterRender from './components/ClickCounterRender';
+// import HoverCounterRender from './components/HoverCounterRender';
+// import Counter from './components/Counter';
+import Todo from './components/Todo';
+import React from 'react';
 
-function App() {
-      // //state and lifecycle start
+
+// function App() { react hook, mane 18-19 number video te eshe eta bondho korlam, er aag porjontw sobai case ei eta cholse 
+    // karon niche class ansi      
+
+// //state and lifecycle start
     // return (
     // <div>
     //     <Clock locale="bn-BD"/>     
@@ -86,17 +91,34 @@ function App() {
     //   );
     //   // Higher Order Components (HOC) end
 
-    //Render Props start
-    return (
-        <div className='App'>
-            <Counter render= {(count,incrementCount)=>
-                <ClickCounterRender count={count} incrementCount={incrementCount}/>}/>
+    // //Render Props start
+    // return (
+    //     <div className='App'>
+    //         <Counter render= {(count,incrementCount)=>
+    //             <ClickCounterRender count={count} incrementCount={incrementCount}/>}/>
 
-            <Counter render= {(count,incrementCount)=>
-                <HoverCounterRender count={count} incrementCount={incrementCount}/>}/>    
-        </div>
-        );
-    // Render Props end
-}
+    //         <Counter render= {(count,incrementCount)=>
+    //             <HoverCounterRender count={count} incrementCount={incrementCount}/>}/>    
+    //     </div>
+    //     );
+    // // Render Props end
+
+    // context api start
+    // tutorial 16 17 no dekhi nai context api section er, eta pore dekhbo ba ignore korbo
+    // cntext api end
+
+    // react hook use state start
+    class App extends React.Component{
+        render(){
+            return (
+                <div className='App'>
+                    <Todo/>
+                </div>
+            );
+        }    
+    }
+    // react hook use state end
+
+
 
 export default App;
