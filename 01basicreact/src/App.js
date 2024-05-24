@@ -10,7 +10,8 @@
 // import ClickCounterRender from './components/ClickCounterRender';
 // import HoverCounterRender from './components/HoverCounterRender';
 // import Counter from './components/Counter';
-import Todo from './components/Todo';
+// import Todo from './components/Todo';
+import MyComponent from './components/MyComponent';
 import React from 'react';
 
 
@@ -107,18 +108,29 @@ import React from 'react';
     // tutorial 16 17 no dekhi nai context api section er, eta pore dekhbo ba ignore korbo
     // cntext api end
 
-    // react hook use state start
+    // // react hook use state start
+    // class App extends React.Component{
+    //     render(){
+    //         return (
+    //             <div className='App'>
+    //                 <Todo/>
+    //             </div>
+    //         );
+    //     }    
+    // }
+    // // react hook use state end
+
+    // react hook use effect start
     class App extends React.Component{
         render(){
             return (
                 <div className='App'>
-                    <Todo/>
+                    <MyComponent/>
                 </div>
             );
         }    
     }
-    // react hook use state end
-
+    // react hook use effect end
 
 
 export default App;
