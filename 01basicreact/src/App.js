@@ -12,6 +12,7 @@
 // import Counter from './components/Counter';
 // import Todo from './components/Todo';
 import MyComponent from './components/MyComponent';
+import { useState } from 'react';
 import React from 'react';
 
 
@@ -121,15 +122,19 @@ import React from 'react';
     // // react hook use state end
 
     // react hook use effect start
-    class App extends React.Component{
-        render(){
+    function App (){
+        const [show, setShow] = useState(true);
             return (
                 <div className='App'>
-                    <MyComponent/>
+                    {show && <MyComponent/>}
+                    <p>
+                        <button type='button' onClick={ () => setShow ((prevShow) => !prevShow)}>
+                            {show ? 'Hide Post' : 'Show Post'}
+                        </button>
+                    </p>
                 </div>
             );
         }    
-    }
     // react hook use effect end
 
 
