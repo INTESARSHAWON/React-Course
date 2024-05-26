@@ -137,5 +137,11 @@ import React from 'react';
         }    
     // react hook use effect end
 
-
+    // useCallback & useMemo hook start
+        //summit series er tutorial no 21
+        // performance valor jonno use hoy, ejonno likhe sikhi nai, concept bujchi 
+        // usecallback function ekta function ke mone rakhbe
+        // usememo ekta function er return value ke mone rakhbe
+        // jokhon [] er moddhe je thake tar value change hobe, tokhon e era rander korbe abar
+    // useCallback & useMemo hook end
 export default App;
