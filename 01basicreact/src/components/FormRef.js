@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import Input from './Input';
 
 function FormRef() {
     const inputRef = useRef(null);
@@ -9,7 +10,8 @@ function FormRef() {
     return(
         <div>
             <p>
-                <input ref={inputRef} type="text" placeholder="enter something"/>
+                {/* <input ref={inputRef} type="text" placeholder="enter something"/> */}
+                <Input ref={inputRef} type="text" placeholder="enter something"/>
             </p>
         </div>
     );
