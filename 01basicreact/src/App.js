@@ -11,9 +11,10 @@
 // import HoverCounterRender from './components/HoverCounterRender';
 // import Counter from './components/Counter';
 // import Todo from './components/Todo';
-import MyComponent from './components/MyComponent';
-import { useState } from 'react';
-import React from 'react';
+// import MyComponent from './components/MyComponent';
+// import { useState } from 'react';
+// import React from 'react';
+import FormRef from './components/FormRef';
 
 
 // function App() { react hook, mane 18-19 number video te eshe eta bondho korlam, er aag porjontw sobai case ei eta cholse 
@@ -122,19 +123,19 @@ import React from 'react';
     // // react hook use state end
 
     // react hook use effect start
-    function App (){
-        const [show, setShow] = useState(true);
-            return (
-                <div className='App'>
-                    {show && <MyComponent/>}
-                    <p>
-                        <button type='button' onClick={ () => setShow ((prevShow) => !prevShow)}>
-                            {show ? 'Hide Post' : 'Show Post'}
-                        </button>
-                    </p>
-                </div>
-            );
-        }    
+    // function App (){
+    //     const [show, setShow] = useState(true);
+    //         return (
+    //             <div className='App'>
+    //                 {show && <MyComponent/>}
+    //                 <p>
+    //                     <button type='button' onClick={ () => setShow ((prevShow) => !prevShow)}>
+    //                         {show ? 'Hide Post' : 'Show Post'}
+    //                     </button>
+    //                 </p>
+    //             </div>
+    //         );
+    //     }    
     // react hook use effect end
 
     // useCallback & useMemo hook start
@@ -144,4 +145,16 @@ import React from 'react';
         // usememo ekta function er return value ke mone rakhbe
         // jokhon [] er moddhe je thake tar value change hobe, tokhon e era rander korbe abar
     // useCallback & useMemo hook end
+
+
+
+    // useRef hook start
+    function App (){
+            return (
+                <div className='App'>
+                    <FormRef/>
+                </div>
+            );
+        }
+    // useRef hook end    
 export default App;
