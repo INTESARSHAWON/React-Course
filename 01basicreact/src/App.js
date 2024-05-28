@@ -15,7 +15,8 @@
 // import { useState } from 'react';
 // import React from 'react';
 // import FormRef from './/components/FormRef';
-import Time from './components/Time';
+// import Time from './components/Time';
+import CounterReducer from './components/CounterReducer';
 
 
 // function App() { react hook, mane 18-19 number video te eshe eta bondho korlam, er aag porjontw sobai case ei eta cholse 
@@ -150,13 +151,24 @@ import Time from './components/Time';
 
 
     // useRef hook start
+    // function App (){
+    //         return (
+    //             <div className='App'>
+    //                 {/* <FormRef/> */}
+    //                 <Time/>
+    //             </div>
+    //         );
+    //     }
+    // useRef hook end 
+    
+    // useReducer hook start
     function App (){
-            return (
-                <div className='App'>
-                    {/* <FormRef/> */}
-                    <Time/>
-                </div>
-            );
-        }
-    // useRef hook end    
+        return (
+            <div className='App'>
+                <CounterReducer/>
+            </div>
+        );
+    }
+    // useReducer hook end
+
 export default App;
