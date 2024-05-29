@@ -16,7 +16,8 @@
 // import React from 'react';
 // import FormRef from './/components/FormRef';
 // import Time from './components/Time';
-import CounterReducer from './components/CounterReducer';
+// import CounterReducer from './components/CounterReducer';
+import ComplexCounter from './components/ComplexCounter';
 
 
 // function App() { react hook, mane 18-19 number video te eshe eta bondho korlam, er aag porjontw sobai case ei eta cholse 
@@ -165,7 +166,8 @@ import CounterReducer from './components/CounterReducer';
     function App (){
         return (
             <div className='App'>
-                <CounterReducer/>
+                {/* <CounterReducer/> */}
+                <ComplexCounter/>
             </div>
         );
     }
