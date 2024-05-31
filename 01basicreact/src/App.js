@@ -18,7 +18,9 @@
 // import Time from './components/Time';
 // import CounterReducer from './components/CounterReducer';
 // import ComplexCounter from './components/ComplexCounter';
-import CounterThree from './components/CounterThree';
+// import CounterThree from './components/CounterThree';
+import React, { useReducer } from 'react';
+import ComponentA from './components/ComponentB';
 
 // function App() { react hook, mane 18-19 number video te eshe eta bondho korlam, er aag porjontw sobai case ei eta cholse 
     // karon niche class ansi      
@@ -163,15 +165,46 @@ import CounterThree from './components/CounterThree';
     // useRef hook end 
     
     // useReducer hook start
-    function App (){
-        return (
-            <div className='App'>
-                {/* <CounterReducer/> */}
-                {/* <ComplexCounter/> */}
-                <CounterThree/>
+    // function App (){
+    //     return (
+    //         <div className='App'>
+    //             {/* <CounterReducer/> */}
+    //             {/* <ComplexCounter/> */}
+    //             <CounterThree/>
+    //         </div>
+    //     );
+    // }
+    // useReducer hook end
+
+    // useReducer hook with use useContext hook start
+    
+    export const counterContext = React.createContext();
+    
+    const initialState= 0;
+
+    const reducer = (state, action) => {
+        switch (action) {
+            case 'increment':
+                return state + 1;                
+            case 'decrement':
+                return state - 1;
+            default:
+                return state;
+        }
+    };
+
+    function App() {
+        const [count, dispatch] = useReducer(reducer, initialState);
+        return(
+            <div className='app'>
+                <div>Count- {count} </div>
+                <counterContext.Provider value={{countDispatch: dispatch}}>
+                    <ComponentA/>
+                </counterContext.Provider>
             </div>
         );
     }
-    // useReducer hook end
+    
+    // useReducer hook with use useContext hook end
 
 export default App;
