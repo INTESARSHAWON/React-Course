@@ -17,8 +17,8 @@
 // import FormRef from './/components/FormRef';
 // import Time from './components/Time';
 // import CounterReducer from './components/CounterReducer';
-import ComplexCounter from './components/ComplexCounter';
-
+// import ComplexCounter from './components/ComplexCounter';
+import CounterThree from './components/CounterThree';
 
 // function App() { react hook, mane 18-19 number video te eshe eta bondho korlam, er aag porjontw sobai case ei eta cholse 
     // karon niche class ansi      
@@ -167,7 +167,8 @@ import ComplexCounter from './components/ComplexCounter';
         return (
             <div className='App'>
                 {/* <CounterReducer/> */}
-                <ComplexCounter/>
+                {/* <ComplexCounter/> */}
+                <CounterThree/>
             </div>
         );
     }
