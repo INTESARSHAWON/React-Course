@@ -21,7 +21,9 @@
 // import CounterThree from './components/CounterThree';
 // import React, { useReducer } from 'react';
 // import ComponentA from './components/ComponentB';
-import Getpost2 from './components/GetPost2';
+// import Getpost2 from './components/GetPost2';
+import LayoutComponentOne from "./components/LayoutComponentOne";
+// import LayoutComponentTwo from "./components/LayoutComponentTwo";
 
 // function App() { react hook, mane 18-19 number video te eshe eta bondho korlam, er aag porjontw sobai case ei eta cholse 
     // karon niche class ansi      
@@ -209,15 +211,27 @@ import Getpost2 from './components/GetPost2';
     // useReducer hook with use useContext hook end
 
 
-    // useReducer hook with use useEffect hook start
+    // // useReducer hook with use useEffect hook start
+    // function App() {
+         
+    //     return(
+    //             <div className='app'>
+    //                     <Getpost2/>
+    //             </div>
+    //         );
+    //     }
+    // // useReducer hook with use useEffect hook end
+
+    // custom hook start
     function App() {
          
         return(
                 <div className='app'>
-                        <Getpost2/>
+                        <LayoutComponentOne/>
+                        {/* <LayoutComponentTwo/> */}
                 </div>
             );
         }
-    // useReducer hook with use useEffect hook end
+    // custom hook end
 
 export default App;
