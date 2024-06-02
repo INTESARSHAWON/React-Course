@@ -22,8 +22,10 @@
 // import React, { useReducer } from 'react';
 // import ComponentA from './components/ComponentB';
 // import Getpost2 from './components/GetPost2';
-import LayoutComponentOne from "./components/LayoutComponentOne";
+// import LayoutComponentOne from "./components/LayoutComponentOne";
 // import LayoutComponentTwo from "./components/LayoutComponentTwo";
+import './assets/css/global.css';
+import Logo from './components/Logo';
 
 // function App() { react hook, mane 18-19 number video te eshe eta bondho korlam, er aag porjontw sobai case ei eta cholse 
     // karon niche class ansi      
@@ -222,16 +224,28 @@ import LayoutComponentOne from "./components/LayoutComponentOne";
     //     }
     // // useReducer hook with use useEffect hook end
 
-    // custom hook start
-    function App() {
+    // // custom hook start
+    // function App() {
          
-        return(
-                <div className='app'>
-                        <LayoutComponentOne/>
-                        {/* <LayoutComponentTwo/> */}
-                </div>
-            );
-        }
-    // custom hook end
+    //     return(
+    //             <div className='app'>
+    //                     <LayoutComponentOne/>
+    //                     {/* <LayoutComponentTwo/> */}
+    //             </div>
+    //         );
+    //     }
+    // // custom hook end
+
+    // Inline Style & CSS Modules start
+    function App() {
+        return (
+            <div className="App">
+                <h1>Learn with Sumit</h1>
+                <Logo />
+            </div>
+        );
+    }
+    // Inline Style & CSS Modules end
+
 
 export default App;
